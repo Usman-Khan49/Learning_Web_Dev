@@ -1,0 +1,110 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.bento-grid {
+    display: grid;
+    grid-auto-rows: 150px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 60px);
+    gap: 1rem;
+    grid-template-areas: 
+        'box1 box2 box2 box3'
+        'box1 box2 box2 box3'
+        'box1 box2 box2 box3'
+        'box1 box2 box2 box3'
+        'box1 box5 box6 box3'
+        'box4 box5 box6 box3'
+        'box4 box5 box6 box3' 
+        'box4 box7 box8 box8'
+        'box4 box7 box8 box8';
+    
+    max-width: 1200px;
+    width: 100%;
+    padding: 1rem;
+    animation: fade-in 0.5s ease-in forwards;
+    animation-delay: 0.5s;
+
+}
+
+.item-1 {
+    grid-area: box1;
+    background-color: #FFD54F; /* Yellow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-item
+{
+    transition: transform 250ms ease-in;
+}
+.grid-item:hover{
+    transform: scale(1.1);
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.item-2 {
+    grid-area: box2;
+    background-color: #9575CD; /* Purple */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-3 {
+    grid-area: box3;
+    background-color: #CE93D8; /* Light Purple */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-4 {
+    grid-area: box4;
+    background-color: #FF8A65; /* Orange */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-5 {
+    grid-area: box5;
+    background-color: #FFF176; /* Light Yellow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-6 {
+    grid-area: box6;
+    background-color: #AED581; /* Light Green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-7 {
+    grid-area: box7;
+    background-color: #4DB6AC; /* Teal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-8 {
+    grid-area: box8;
+    background-color: #4FC3F7; /* Light Blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
