@@ -72,10 +72,15 @@ a, a:visited,a:focus
     font-family: var(--font-md);
     font-weight: 400;
     color: var(--color-tx-grey-900);
+    transition: color 200ms ease-in;
+}
+.menu-items a:hover{
+    color: var(--color-hd-purple);
 }
 
 .btn-purple
 {
+    position: relative;
     background-color:var(--color-hd-purple);
     color: white;
     font-family: var(--font-md);
@@ -84,9 +89,58 @@ a, a:visited,a:focus
     padding: 11px 24px;
     border-radius: 40px;
     border: none;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    overflow: hidden;
+}
+.btn-purple .btn-text, .btn-white .btn-text
+{
+    display: inline-block;
+    position: relative;
+    transition: transform 200ms ease-in;
+}
+
+.btn-purple::after, .btn-white::after
+{
+    content: attr(data-text);
+    position:absolute;
+    top:100%;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    font-family: var(--font-md);
+    font-size: 16px;
+    line-height: 20px;
+    transition: top 200ms ease;
+    width: max-content;
+}
+.btn-white::after
+{
+    color: var(--color-tx-grey-900);
+}
+.btn-purple:hover .btn-text, .btn-white:hover .btn-text
+{
+    transform: translateY(-170%);
+}
+.btn-purple:hover, .btn-white:hover
+{
+    background-color: #2a1999;
+    box-shadow: 0 8px 20px #120b421f;
+}
+.btn-purple:hover::after, .btn-white:hover::after
+{
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+.btn-white:hover{
+    border: 1px solid var(--color-hd-purple);
+    background-color: var(--font-rg);
+    box-shadow: 0 8px 20px #120b421f;
 }
 .btn-white
 {
+    position: relative;
     background-color:var(--color-white);
     color: var(--color-tx-grey-900);
     font-family: var(--font-md);
@@ -95,6 +149,9 @@ a, a:visited,a:focus
     padding: 11px 24px;
     border-radius: 40px;
     border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition:all .2s ease-in-out;
+    overflow: hidden;
 }
 .hero-section
 {
@@ -115,7 +172,21 @@ a, a:visited,a:focus
     text-align: center;
     width: 720px;
     margin-bottom: 22px;
+    animation: reveal-slideup 1s ease-out forwards;
 }
+@keyframes reveal-slideup {
+    from
+    {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .title .highlighted
 {
     color: var(--color-hd-purple);
@@ -133,12 +204,29 @@ a, a:visited,a:focus
     background-color: #fbfaff;
     font-size: 14px;
     font-family: var(--font-md);
-
+    animation: reveal .6s ease-in 1 forwards;
+    opacity: 0;
 }
+
+@keyframes reveal {
+    from
+    {
+        opacity: 0;
+        transform:scale(.1);
+    }
+    to
+    {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .action-buttons
 {
     display: flex;
     padding-block: 24px;
+    animation: reveal-slideup 1s ease-out forwards;
+    animation-delay: .2s;
 }
 .subtext
 {
@@ -150,7 +238,8 @@ a, a:visited,a:focus
     color: grey;
     width: 560px;
     margin-bottom: 24px;
-    
+    animation: reveal-slideup 1s ease-out forwards;
+    animation-delay: .1s;
 }
 .action-buttons button{
     padding: 16px 24px;
@@ -226,6 +315,17 @@ a, a:visited,a:focus
     grid-area: prod-1;
     
 }
+.prod-3
+{
+    grid-area: prod-3;
+}.prod-4
+{
+    grid-area: prod-4;
+}
+.prod-2
+{
+    grid-area: prod-2;
+}
 .hr-prod
 {
     border:1px solid var(--color-border);
@@ -233,6 +333,7 @@ a, a:visited,a:focus
     justify-content: space-between;
     padding: 40px;
     border-radius: 20px;
+    transition: box-shadow 500ms ease-in-out;
 }
 .hr-prod .info-sec
 {
@@ -264,9 +365,13 @@ a, a:visited,a:focus
     text-align: start; 
     margin-bottom: 16px;
 }
-.prod-2
+.hr-prod:hover
 {
-    grid-area: prod-2;
+    box-shadow: 0px 4px 20px #120b421f;
+}
+.ver-prod:hover
+{
+    box-shadow: 0px 4px 20px #120b421f;
 }
 .ver-prod
 {
@@ -290,13 +395,6 @@ a, a:visited,a:focus
 {
     text-align: start;
     width: 480px;
-}
-.prod-3
-{
-    grid-area: prod-3;
-}.prod-4
-{
-    grid-area: prod-4;
 }
 
 .Solutions
@@ -327,6 +425,9 @@ a, a:visited,a:focus
     flex-direction: column;
     align-items: flex-start;
     padding: 24px 32px 32px 32px;    
+}
+.card:hover{
+    box-shadow: 0px 4px 20px #120b421f;
 }
 .cards .svg{
     margin-bottom: 30px;
@@ -464,10 +565,9 @@ a, a:visited,a:focus
     padding-right: 8px;
     
 }
-.pr_card .btn-purple, .btn-white
+.pr_card .btn-purple, .pr_card .btn-white
 {
     padding-block: 18px;
-    margin-bottom: 8px;
 }
 .pr_card .sub-head
 {
@@ -497,4 +597,100 @@ a, a:visited,a:focus
 .personal .sub-head
 {
     color: var(--color-grey-500);
+}
+
+.action_section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( #f4f3fd, #fff);
+    padding-top:120px;
+    padding-bottom: 80px;
+}
+.action-grid
+{
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1150px;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px #0000000f;
+}
+.action-grid .col-1
+{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-block: 55px;
+    gap: 2rem;
+}
+.col-1 .heading-4
+{
+    font-size: 48px;
+    font-weight: 200;
+    line-height: 165%;
+}
+.col-1 .subtext
+{
+    text-align:start;
+    width: 350px;
+    padding-top:8px;
+    
+}
+.col-1 .btn-purple, .btn-whitef
+{
+    padding-block: 18px;
+}
+
+.col-2
+{
+    background-image: url(./assets/cloud-bg.png);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1150px;
+    border-top: 1px solid var(--color-border);
+    padding-block:40px;
+}
+
+footer div
+{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    
+}
+footer p{
+    font-family: var(--font-rg);
+    font-size: 14px;
+    color: var(--color-grey-500);
+}
+.cookie::before{
+    content: '🍪';
+    padding-right: 6px;
+}
+.top::before
+{
+    content: '☝️';
+    padding-right: 6px;
 }
