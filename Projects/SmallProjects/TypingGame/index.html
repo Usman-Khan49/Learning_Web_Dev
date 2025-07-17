@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+    <title>Typing Game | MADE By USMAN</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="score">
+            <h1 class="heading-1">
+                Score 
+            </h1>
+            <p class="player-score" id="player-score">
+                00
+            </p>
+        </div>
+        <p class="Word" id="Word">
+            Sample Word
+        </p>
+        <div class="inputs">
+            <input type="text" class="player-input" id ="player-input">
+            <div class="timer" id="timer">60:00</div>
+        </div>
+        <!-- Sound effect for correct word -->
+        <audio id="correct-sound" src="sound-effect.mp3" preload="auto"></audio>
+        <div class="highscore-menu">
+            <div class="heading-2">Highscore</div>
+            <ol class="highscores" id="highscores">
+                
+            </ol>
+            <p id="WPM" class="WPM">WPM: </p>
+        </div>
+
+    </div>
+</body>
+</html>
