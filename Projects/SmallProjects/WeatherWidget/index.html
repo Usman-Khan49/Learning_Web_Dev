@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link rel="stylesheet" href="style.css">    
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="weather">
+        <div class="header">
+            <div class="geolocation" id="cityName" >
+                
+            </div>
+            <div class="time" id="currentTime">
+
+            </div>
+        </div>
+        <div class="weather-icon">
+            <img src="./assets/icons/sunny.png" alt="weather icon" class="icon" width="128px">
+            <p class="label" id="weather"></p>
+        </div>
+        <div class="weather-info">
+            <div class="info">
+                <div class="wind" id="wind">km/h</div>
+                <div class="humidity" id="humidity">%</div>
+                <div class="precipitation" id="precipitation">h</div>
+            </div>
+            <div class="temperature" id="temp">°</div>
+        </div>
+    </div>
+</body>
+</html>
