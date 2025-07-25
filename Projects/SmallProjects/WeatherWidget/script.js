@@ -17,7 +17,7 @@ function displayData(data)
     if (windSpeed) windSpeed.textContent = `${data.wind.speed} km/h`;
     if (humiditylevel) humiditylevel.textContent = `${data.main.humidity}%`;
     if (weatherCondition) weatherCondition.textContent = data.weather[0].main;
-    if (currentTime) time.textContent = currentTime;
+    if (time) time.textContent = currentTime;
 }
 
 function getLocation()

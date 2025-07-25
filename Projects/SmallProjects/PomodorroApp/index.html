@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <script type="module" src="./scripts/script.js" defer></script>
     <title>Pomodorro App Component</title>
 </head>
 <body>
-    <div class="pomodoro-window ">
-        <div class="pomodoro-showcase hidden">
+    <div class="pomodoro-window" >
+        <div class="pomodoro-showcase " id="showcase-state">
             <div class="title">
                 Pomodoro <br><span class="highlight">Timer</span>
             </div>
         </div>
-        <div class="pomodoro-timer hidden">
+        <div class="pomodoro-timer "id = "home-state">
         <div class="timer-container">
             <img src="./assets/icons/eye.png" alt="eye icon" class="timer-icon" width="20px">
             <div class="timer">
-                25:00     
+                     
             </div>
             <div class="timer-tiles">
                 <div class="tile-1 tile"></div>
@@ -26,7 +27,7 @@
                 <div class="tile-4 tile"></div>
             </div>
             <div class="session-status">
-                Focus
+                
             </div>
         </div>
         <div class="nav-btn">
@@ -34,14 +35,14 @@
                 <img src="./assets/icons/back1.png" alt="setting" class="settings-icon" width="20px">
             </div>
             <div class="btn-2">
-                START
+                
             </div>
             <div class="btn-3">
                 <img src="./assets/icons/settings.png" alt="back-btn" class="back-btn" width="20px">
             </div>
         </div>
         </div>
-        <div class="pomodoro-settings ">
+        <div class="pomodoro-settings" id="setting-state">
             <div class="nav">
                 <p class="title">
                     Settings
@@ -54,38 +55,38 @@
                 <div class="duration active">DURATION</div>
                 <div class="notifications">NOTIFICATIONS</div>
             </div>
-            <div class="all-settings">
+            <div class="all-settings" id="timer-setting-state">
             <div class="setting st-1">
                 <p class="setting-name">Focus Session</p>
                 <div class="setting-value">
-                <div class="value">25 &nbsp;</div>
-                    <span class="highlighted">min</span>
+                <div class="value"></div>
+                <span class="highlighted">&nbsp; min</span>
                 </div>
             </div>
             <div class="setting st-2">
                 <p class="setting-name">Short break</p>
                 <div class="setting-value">
-                <div class="value">05 &nbsp;</div>
-                    <span class="highlighted">min</span>
+                    <div class="value"></div>
+                    <span class="highlighted">&nbsp; min</span>
 
                 </div>
             </div>
             <div class="setting st-3">
                 <p class="setting-name">Long break</p>
                 <div class="setting-value">
-                    <div class="value">15 &nbsp;</div>
-                    <span class="highlighted">min</span>
+                    <div class="value"></div>
+                    <span class="highlighted"> &nbsp;min</span>
                 </div>
             </div>
             <div class="setting st-4">
                 <p class="setting-name">Long break after</p>
                 <div class="setting-value">
-                    <div class="value">4 &nbsp;</div>
-                    <span class="highlighted">sess</span>
+                    <div class="value"></div>
+                    <span class="highlighted">&nbsp; sess</span>
                 </div>
             </div>
             </div>
-            <div class="all-notis-setting hidden ">
+            <div class="all-notis-setting hidden" id="setting-notification-state">
                 <div class="session-notify setting">
                     <p class="setting-name">Turn On Notification</p>
                     <label class="toggle-switch">
